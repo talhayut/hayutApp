@@ -1,0 +1,16 @@
+<div class="logArchive">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th data-toggle="tooltip" title="Time and date that the event happened" class="col-md-4">Time</th>
+        <th data-toggle="tooltip" title="Event Viewer">Event</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="log in logger track by $index" class="ctrl">
+        <td>{{ log.date | date: 'M/d/yy h:mm a'}}</td>
+        <td>{{ log.text }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,17 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th class="col-md-1">#</th>
+      <th data-toggle="tooltip" title="Email list in the database">Email</th>
+      <th data-toggle="tooltip" title="Click to remove email addresses from the database" class="col-md-3">Function</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in database track by item.id">
+      <td>{{ item.id }}</td>
+      <td>{{ item.email }}</td>
+      <td>
+        <button type="button" class="btn btn-xs col-xs-8" ng-click="remove(item)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

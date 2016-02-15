@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="loggerApp">
+
+<head>
+  <title>Zerto GUI Project</title>
+  <link rel="stylesheet"
+        href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="assets/styles/main.css"/>
+</head>
+
+<body ng-controller="mainController">
+
+<header>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">Zerto GUI Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-6">
+      <!-- top row-->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4>Add New User</h4>
+            </div>
+            <div class="panel-body">
+              <div class="input-group col-md-12">
+                <form name="registerForm" role="form" data-toggle="validator">
+                  <div class="col-md-10 form-group">
+                    <input type="email" name="email" class="form-control danger"
+                           id="inputEmail" placeholder="User's email address..."
+                           required ng-model="input"
+                           ng-class="{ 'has-error': registerForm.email.$viewValue.length > 0 && registerForm.email.$invalid }">
+                  </div>
+                  <div class="col-md-2 input-group-btn">
+                    <button type="submit" class="btn btn-default"
+                            ng-click="clicked()"
+                            ng-disabled="registerForm.email.$invalid">Send
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- second row-->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4>Users</h4>
+            </div>
+            <div class="panel-body">
+              <database></database>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <!-- third row-->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4>Logger</h4>
+            </div>
+            <div class="panel-body">
+              <logger></logger>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+
+</html>
